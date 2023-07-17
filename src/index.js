@@ -1,13 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { createGlobalStyle } from 'styled-components';
+import Home from './Pages/Home/';
+import Error from './Components/Error';
+import Banner from './Components/Banner';
+import Footer from './Components/Footer';
 import reportWebVitals from './reportWebVitals';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Montserrat';
+    margin: 5%;
+    a {
+      text-decoration: none; /* Supprime la décoration de lien */
+    }
+  }
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <GlobalStyle />
+    <Banner />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
+          <Footer />
+        </Router>
   </React.StrictMode>
 );
 
