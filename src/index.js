@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components';
 import Home from './Pages/Home/';
-import Error from './Components/Error';
+import Apropos from './Pages/Apropos';
+import DetailsPage from './Pages/DetailsPage';
+import Error from './Pages/Error';
 import Banner from './Components/Banner';
 import Footer from './Components/Footer';
 import reportWebVitals from './reportWebVitals';
@@ -22,14 +24,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <GlobalStyle />
-    <Banner />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="*" element={<Error />} />
-            </Routes>
-          <Footer />
-        </Router>
+      <GlobalStyle />
+      <Banner />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/a-propos" element={<Apropos />} />
+        <Route path="/logement/:id" element={<DetailsPage />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
+    </Router>
   </React.StrictMode>
 );
 

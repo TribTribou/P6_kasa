@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -26,14 +27,22 @@ const ThumbTitle = styled.h2`
 
 
 function Thumb({ logement }) {
-    return (
-      <Link to={`/logements/${logement.id}`}>
-        <ThumbWrapper>
-          <ThumbImage src={logement.cover} alt={logement.title} />
-          <ThumbTitle>{logement.title}</ThumbTitle>
-        </ThumbWrapper>
+  return (
+    <ThumbWrapper>
+      <Link to={`/logement/${logement.id}`}>
+        <ThumbImage src={logement.cover} alt={logement.title} />
+        <ThumbTitle>{logement.title}</ThumbTitle>
       </Link>
-    );
-  }
+    </ThumbWrapper>
+  );
+}
+
+Thumb.propTypes = {
+  logement: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+};
   
   export default Thumb;

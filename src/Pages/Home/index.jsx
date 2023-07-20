@@ -2,6 +2,7 @@ import React from 'react';
 import Thumb from '../../Components/Thumb';
 import logements from '../../assets/logements.json'
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HomeBanner = styled.div`
   position: relative;
@@ -14,7 +15,7 @@ const HomeBanner = styled.div`
 
 const HomeBannerImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
   filter: brightness(0.6);
 `;
@@ -53,14 +54,16 @@ function Home() {
   return (
     <div>
       <HomeBanner>
-        <HomeBannerImage src="./HomeBannerImg.png" alt="Paysage illustratif" />
+        <HomeBannerImage src="./HomeBannerImg.jpg" alt="Paysage illustratif" />
         <HomeSlogan>Chez vous, partout et ailleurs</HomeSlogan>
       </HomeBanner>
       <HomeWrapper>
         {thumbsToShow.map((logement) => (
           <ThumbWrapper key={logement.id}>
+          <Link to={`/logement/${logement.id}`}>
             <Thumb logement={logement} />
-          </ThumbWrapper>
+          </Link>
+        </ThumbWrapper>
         ))}
       </HomeWrapper>
     </div>

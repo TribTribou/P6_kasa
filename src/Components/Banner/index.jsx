@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Accueil from '../Accueil';
-import Apropos from '../Apropos';
+import APropos from '../APropos';
 import LogoKasa from '../LogoKasa';
 import styled from 'styled-components';
 
-const BannerWrapper = styled.nav`
+const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,10 +13,10 @@ const BannerWrapper = styled.nav`
   margin-top: -10%;
 `;
 
-const AccueilLink = styled(Link)`
+const NavItem = styled(Link)`
   color: #ff6060;
   margin-left: 10px;
-  text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
+  ${({ active }) => active && 'text-decoration: underline;'}
   text-decoration-color: red;
 `;
 
@@ -31,15 +31,17 @@ function Banner() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   return (
-    <BannerWrapper>
+    <Nav>
         <LogoKasa />
       <TextWrapper>
-        <AccueilLink to="/" isActive={isHome}>
-          <Accueil />
-        </AccueilLink>
-        <Apropos />
+      <NavItem to="/" active={location.pathname === '/'}>
+        <Accueil />
+      </NavItem>
+      <NavItem to="/a-propos" active={location.pathname === '/a-propos'}>
+      <APropos />
+      </NavItem>
       </TextWrapper>
-    </BannerWrapper>
+    </Nav>
   );
 }
 

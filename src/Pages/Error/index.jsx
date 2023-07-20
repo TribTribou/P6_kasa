@@ -4,17 +4,16 @@ import styled from 'styled-components';
 
 const ErrorContainer = styled.div`
   text-align: center;
+  color: #FF6060;
 `;
 
 const ErrorTitle = styled.h1`
   font-size: 10em;
-  color: #FF6060;
   margin-bottom: 12%;
   margin-top: -1%;
 `;
 
 const ErrorMessage = styled.p`
-  color: #FF6060;
   font-size: 2em;
 `;
 
