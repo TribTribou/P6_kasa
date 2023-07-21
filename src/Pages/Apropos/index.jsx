@@ -5,13 +5,14 @@ const ColumnWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 80%;
+  margin: 0 10% 0 10%;
 `;
 
 const AproposBanner = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  margin-bottom: 5%;
   max-width: 100%;
   max-height:200px;
 `;
@@ -30,7 +31,6 @@ function Apropos() {
       <AproposBanner>
         <AproposBannerImage src="./AProposImg.jpg" alt="Autre paysage illustratif" />
       </AproposBanner>
-      <h1>À propos</h1>
       <ColumnWrapper>
         <CollapseItem
           title="Fiabilité"

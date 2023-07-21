@@ -23,7 +23,7 @@ function LogoKasaFooter() {
           <LogoWrapper>
             <LogoText>
               K
-              <LogoImage src="./logoKasaImg2.png" alt="Logo Kasa Footer" />
+              <LogoImage src="../logoKasaImg2.png" alt="Logo Kasa Footer" />
               sa
             </LogoText>
           </LogoWrapper>

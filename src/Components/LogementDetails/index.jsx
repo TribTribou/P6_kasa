@@ -1,88 +1,175 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import RatingStars from '../RatingStars';
+import CollapseItem from '../CollapseItem';
+import CollapseEquipements from '../CollapseEquipements';
 
 const LogementDetailsWrapper = styled.div`
-  /* Ajoute ici les styles du wrapper de la page de détails du logement */
+background-color: #f6f6f6;
+padding: 20px;
+border-radius: 20px;
+display: flex;
+  flex-direction: column;
 `;
 
-const CoverImage = styled.img`
-  /* Ajoute ici les styles de l'image de couverture du logement */
+const CarouselWrapper = styled.div`
+position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+const CarouselButton = styled.button`
+position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100px;
+  height: 140px;
+  background-image: url(${props => props.src}); /* Utilisation de props.src pour définir l'arrière-plan de l'image */
+  background-size: cover;
+`;
+
+const CarouselButtonPrev = styled(CarouselButton)`
+  left: -10px;
+`;
+
+const CarouselButtonNext = styled(CarouselButton)`
+  right: 20px;
+`;
+
+const CarouselImage = styled.img`
+width: 100%;
+max-width: 1240px;
+max-height: 20em;
+object-fit: cover;
+border-radius: 20px;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const TitleLocationWrapper = styled.div`
+  margin-top: 3px; /* Ajustez cette valeur selon vos préférences */
 `;
 
 const Title = styled.h1`
-  /* Ajoute ici les styles du titre du logement */
+margin-top: 10px;
+  color: #ff6060;
+  font-size: large;
 `;
 
 const Location = styled.p`
-  /* Ajoute ici les styles de la localisation du logement */
+color: #ff6060;
 `;
 
 const Tags = styled.div`
-  /* Ajoute ici les styles des tags du logement */
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 10px;
 `;
 
-const DescriptionCollapse = styled.div`
-color: #ff6060;
-background-color: #f6f6f6;
-border-radius: 5px;
-overflow: hidden;
-transition: height ease 0.9s;
-height: ${({ isOpen }) => (isOpen ? '100px' : '0px')};
-display: flex;
-align-items: center;
+const TagItem = styled.div`
+  background-color: #ff6060;
+  color: white;
+  padding: 5px;
+  border-radius: 20px;
+  width: 10em;
+  text-align: center;
+  font-size: x-small;
 `;
 
-const EquipmentsCollapse = styled.div`
-color: #ff6060;
-background-color: #f6f6f6;
-border-radius: 5px;
-overflow: hidden;
-transition: height ease 0.9s;
-height: ${({ isOpen }) => (isOpen ? '100px' : '0px')};
-display: flex;
-align-items: center;
+const HostRatingsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const HostWrapper = styled.div`
-  /* Ajoute ici les styles du wrapper pour les informations du propriétaire */
+display: flex;
+  align-items: center;
+margin-top: 20px;
 `;
 
 const HostName = styled.p`
-  /* Ajoute ici les styles du nom du propriétaire */
+color: #ff6060;
+margin-right: 10px;
 `;
 
 const HostImage = styled.img`
-  /* Ajoute ici les styles de l'image de profil du propriétaire */
+width: 50px;
+height: 50px;
+border-radius: 50%;
 `;
 
 const Ratings = styled.div`
-  /* Ajoute ici les styles de la notation en étoiles */
+margin-top: 10px;
+`;
+
+const CollapseContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+gap: 10%;
+`;
+
+const CollapseItemContainer = styled.div`
+  flex-basis: 45%;
 `;
 
 function LogementDetails({ logement }) {
-  // Ici, logement est l'objet contenant toutes les informations du logement sélectionné.
-  // Tu peux l'utiliser pour afficher les détails du logement dans le composant.
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrevClick = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1));
+  };
+
+  const handleNextClick = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1));
+  };
 
   return (
     <LogementDetailsWrapper>
-      <CoverImage src={logement.cover} alt={logement.title} />
-      <Title>{logement.title}</Title>
-      <Location>{logement.location}</Location>
-      <Tags>{logement.tags}</Tags>
-      <DescriptionCollapse>
-        {logement.description}
-      </DescriptionCollapse>
-      <EquipmentsCollapse>
-        {logement.equipements}
-      </EquipmentsCollapse>
-      <HostWrapper>
-        <HostName>{logement.host.name}</HostName>
-        <HostImage src={logement.host.picture} alt={logement.host.name} />
-      </HostWrapper>
-      <Ratings>
-        {logement.ratings}
-      </Ratings>
+      <CarouselWrapper>
+        <CarouselImage src={logement.pictures[currentImageIndex]} alt={logement.title} />
+        <CarouselButtonPrev src='../Left-flat-arrow.svg'  onClick={handlePrevClick} />
+        <CarouselButtonNext src='../Right-flat-arrow.svg' onClick={handleNextClick} />
+      </CarouselWrapper>
+      <TitleWrapper>
+      <TitleLocationWrapper>
+          <Title>{logement.title}</Title>
+          <Location>{logement.location}</Location>
+        </TitleLocationWrapper>
+        <HostRatingsWrapper>
+        <HostWrapper>
+          <HostName>{logement.host.name}</HostName>
+          <HostImage src={logement.host.picture} alt={logement.host.name} />
+        </HostWrapper>
+        <Ratings>
+          <RatingStars value={logement.rating} />
+        </Ratings>
+      </HostRatingsWrapper>
+      </TitleWrapper>
+      <Tags>
+        {logement.tags.map((tag, index) => (
+          <TagItem key={index}>{tag}</TagItem>
+        ))}
+      </Tags>
+      <CollapseContainer>
+        <CollapseItemContainer>
+          <CollapseItem title="Description" content={logement.description} />
+        </CollapseItemContainer>
+        <CollapseItemContainer>
+          <CollapseEquipements title="Équipements" equipments={logement.equipments} />
+        </CollapseItemContainer>
+      </CollapseContainer>
     </LogementDetailsWrapper>
   );
 }

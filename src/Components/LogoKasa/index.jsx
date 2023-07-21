@@ -18,11 +18,12 @@ const LogoImage = styled.img`
 `;
 
 function LogoKasa() {
+
   return (
     <LogoWrapper>
       <LogoText>
         K
-        <LogoImage src="./logoKasaImg.png" alt="Logo Kasa" />
+        <LogoImage src="../logoKasaImg.png" alt="Logo Kasa" />
         sa
       </LogoText>
     </LogoWrapper>

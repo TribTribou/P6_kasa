@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -20,7 +19,7 @@ const ThumbImage = styled.img`
 
 const ThumbTitle = styled.h2`
   color: white;
-  font-size: x-small;
+  font-size: small;
   max-width: 50%;
 `;
 
@@ -36,13 +35,5 @@ function Thumb({ logement }) {
     </ThumbWrapper>
   );
 }
-
-Thumb.propTypes = {
-  logement: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    cover: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
   
   export default Thumb;

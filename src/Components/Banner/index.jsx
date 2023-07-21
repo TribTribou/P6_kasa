@@ -29,7 +29,6 @@ const TextWrapper = styled.div`
 
 function Banner() {
   const location = useLocation();
-  const isHome = location.pathname === '/';
   return (
     <Nav>
         <LogoKasa />

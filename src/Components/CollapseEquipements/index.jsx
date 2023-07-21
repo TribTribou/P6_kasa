@@ -36,10 +36,10 @@ const CollapseContent = styled.div`
   border-radius: 5px;
   overflow: hidden;
   transition: height ease 0.9s;
-  height: ${({ isOpen }) => (isOpen ? '100px' : '0px')};
+  height: ${({ isOpen, itemCount }) => (isOpen ? `${itemCount * 26}px` : '0px')};
   display: flex;
-  align-items: center;
-  font-size: 0.9em;
+  flex-direction: column;
+  font-size: small;
 `;
 
 const CollapseIcon = styled.img`
@@ -48,31 +48,38 @@ const CollapseIcon = styled.img`
   transform: ${({ scale }) => `scale(${scale})`};
 `;
 
-function CollapseItem({ title, content }) {
+const EquipementItem = styled.p`
+  margin: 5px 0;
+`;
+
+function CollapseEquipements({ equipments }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
 
+  const itemCount = equipments.length;
+
   return (
     <CollapseWrapper>
       <CollapseHeader onClick={toggleCollapse}>
-        {title}
+        Équipements
         <CollapseButton isOpen={isOpen}>
           <CollapseIcon src='../Down-flat-arrow.svg' scale={2.5} alt={isOpen ? '▼' : '▲'} />
         </CollapseButton>
       </CollapseHeader>
-      <CollapseContent isOpen={isOpen}>
-        <div className="content">{content}</div>
+      <CollapseContent isOpen={isOpen} itemCount={itemCount} >
+        {equipments.map((equipement, index) => (
+          <EquipementItem key={index}>{equipement}</EquipementItem>
+        ))}
       </CollapseContent>
     </CollapseWrapper>
   );
 }
 
-CollapseItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.node.isRequired,
+CollapseEquipements.propTypes = {
+  equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default CollapseItem;
+export default CollapseEquipements;
