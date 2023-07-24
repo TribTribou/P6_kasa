@@ -1,6 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import Home from './Pages/Home/';
 import Apropos from './Pages/Apropos';
@@ -10,12 +12,17 @@ import Banner from './Components/Banner';
 import Footer from './Components/Footer';
 import reportWebVitals from './reportWebVitals';
 
+const theme = {
+  red: '#FF6060', // Définissez la couleur red dans le thème
+};
+
 const GlobalStyle = createGlobalStyle`
   body {
+    max-width: 1400px;
     font-family: 'Montserrat';
     margin: 5%;
     a {
-      text-decoration: none; /* Supprime la décoration de lien */
+      text-decoration: none;
     }
   }
 `;
@@ -24,6 +31,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Banner />
       <Routes>
@@ -33,6 +41,7 @@ root.render(
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
+      </ThemeProvider>
     </Router>
   </React.StrictMode>
 );

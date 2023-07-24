@@ -3,18 +3,18 @@ import { Link, useLocation } from 'react-router-dom';
 import Accueil from '../Accueil';
 import APropos from '../APropos';
 import LogoKasa from '../LogoKasa';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #ff6060;
+  color: ${({ theme }) => theme.red};
   margin-top: -10%;
 `;
 
 const NavItem = styled(Link)`
-  color: #ff6060;
+  color: ${({ theme }) => theme.red};
   margin-left: 10px;
   ${({ active }) => active && 'text-decoration: underline;'}
   text-decoration-color: red;

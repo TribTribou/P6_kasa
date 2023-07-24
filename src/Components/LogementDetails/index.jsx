@@ -6,6 +6,8 @@ import CollapseItem from '../CollapseItem';
 import CollapseEquipements from '../CollapseEquipements';
 
 const LogementDetailsWrapper = styled.div`
+width:100%;
+max-width: 1250px;
 background-color: #f6f6f6;
 padding: 20px;
 border-radius: 20px;
@@ -14,9 +16,11 @@ display: flex;
 `;
 
 const CarouselWrapper = styled.div`
+width:100%;
 position: relative;
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 
 const CarouselButton = styled.button`
@@ -34,11 +38,11 @@ position: absolute;
 `;
 
 const CarouselButtonPrev = styled(CarouselButton)`
-  left: -10px;
+left: -1.5em;
 `;
 
 const CarouselButtonNext = styled(CarouselButton)`
-  right: 20px;
+right: 0.5em;
 `;
 
 const CarouselImage = styled.img`
