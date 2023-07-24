@@ -24,6 +24,13 @@ const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
     }
+    @media screen and (max-width: 767px) {
+      width:100%;
+      max-width:100%;
+      margin:0;
+      display:flex;
+      justify-content:center;
+    }
   }
 `;
 

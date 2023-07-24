@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const LogoWrapper = styled.div`
   display: inline-block;
+  @media screen and (max-width: 767px) {
+    font-size: 2em;
+  }
 `;
 
 const LogoText = styled.h1`

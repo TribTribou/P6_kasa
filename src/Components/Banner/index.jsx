@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Accueil from '../Accueil';
-import APropos from '../APropos';
+import APropos from '../Apropos'
 import LogoKasa from '../LogoKasa';
 import styled, { css } from 'styled-components';
 
@@ -11,6 +11,9 @@ const Nav = styled.nav`
   justify-content: space-between;
   color: ${({ theme }) => theme.red};
   margin-top: -10%;
+  @media screen and (max-width: 767px) {
+    margin-left:5%;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -24,6 +27,9 @@ const TextWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 60px;
+  @media screen and (max-width: 767px) {
+    gap: 8px;
+  }
 `;
 
 

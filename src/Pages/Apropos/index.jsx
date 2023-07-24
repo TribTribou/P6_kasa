@@ -7,6 +7,10 @@ const ColumnWrapper = styled.div`
   justify-content: space-between;
   width: 80%;
   margin: 0 10% 0 10%;
+  @media screen and (max-width: 767px) {
+    width: 90%;
+    margin: 0 2.5% 0 7.5%;
+  }
 `;
 
 const AproposBanner = styled.div`
@@ -15,6 +19,9 @@ const AproposBanner = styled.div`
   border-radius: 20px;
   max-width: 100%;
   max-height:200px;
+  @media screen and (max-width: 767px) {
+    overflow:visible;
+  }
 `;
 
 const AproposBannerImage = styled.img`
@@ -22,6 +29,11 @@ const AproposBannerImage = styled.img`
   height: 200px;
   object-fit: cover;
   filter: brightness(0.6);
+  @media screen and (max-width: 767px) {
+    border-radius: 20px;
+    max-width: 90%;
+    margin: -10% 2.5% 0 7.5%;
+  }
 `;
 
 

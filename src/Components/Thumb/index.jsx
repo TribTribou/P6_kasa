@@ -7,7 +7,9 @@ const ThumbWrapper = styled.div`
   padding: 10px;
   border-radius: 10px;
   width: 90%;
-  height: 90%;
+  height: 90%;@media screen and (max-width: 767px) {
+    width:100%;
+  }
 `;
 
 const ThumbImage = styled.img`

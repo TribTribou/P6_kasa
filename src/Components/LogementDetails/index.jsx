@@ -8,11 +8,15 @@ import CollapseEquipements from '../CollapseEquipements';
 const LogementDetailsWrapper = styled.div`
 width:100%;
 max-width: 1250px;
-background-color: #f6f6f6;
 padding: 20px;
 border-radius: 20px;
 display: flex;
   flex-direction: column;
+  @media screen and (max-width: 767px) {
+    padding:0;
+    margin: 0 0 0 5%;
+    font-size: x-small;
+  }
 `;
 
 const CarouselWrapper = styled.div`
@@ -35,14 +39,24 @@ position: absolute;
   height: 140px;
   background-image: url(${props => props.src}); /* Utilisation de props.src pour définir l'arrière-plan de l'image */
   background-size: cover;
+  @media screen and (max-width: 767px) {
+    width: 50px;
+  height: 70px;
+  }
 `;
 
 const CarouselButtonPrev = styled(CarouselButton)`
 left: -1.5em;
+@media screen and (max-width: 767px) {
+  left: 0.2em;
+}
 `;
 
 const CarouselButtonNext = styled(CarouselButton)`
 right: 0.5em;
+@media screen and (max-width: 767px) {
+  right: 1.8em;
+}
 `;
 
 const CarouselImage = styled.img`
@@ -51,26 +65,45 @@ max-width: 1240px;
 max-height: 20em;
 object-fit: cover;
 border-radius: 20px;
+@media screen and (max-width: 767px) {
+  height:25em;
+  max-width: 90%;
+  margin: 0 7.5% 0 2.5%;
+}
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items:start;
+  }
 `;
 
 const TitleLocationWrapper = styled.div`
-  margin-top: 3px; /* Ajustez cette valeur selon vos préférences */
+  margin-top: 3px;
+  @media screen and (max-width: 767px) {
+    margin:0 0 5% 3%;
+  }
 `;
 
 const Title = styled.h1`
 margin-top: 10px;
   color: #ff6060;
   font-size: large;
+  @media screen and (max-width: 767px) {
+    font-size: 1em;
+  }
 `;
 
 const Location = styled.p`
 color: #ff6060;
+@media screen and (max-width: 767px) {
+  font-size: 1.2em;
+  position:relative;
+}
 `;
 
 const Tags = styled.div`
@@ -78,6 +111,12 @@ display: flex;
 flex-wrap: wrap;
 gap: 10px;
 margin-top: 10px;
+@media screen and (max-width: 767px) {
+  margin:70% 0 0 2%;
+  position:absolute;
+  top:1;
+  flex-wrap: nowrap;
+}
 `;
 
 const TagItem = styled.div`
@@ -88,33 +127,54 @@ const TagItem = styled.div`
   width: 10em;
   text-align: center;
   font-size: x-small;
+  @media screen and (max-width: 767px) {
+    width:10em;
+    font-size: xx-small;
+    margin-left: 2%;
+  }
 `;
 
 const HostRatingsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media screen and (max-width: 767px) {
+    flex-direction: row;
+    margin:5% 8% -2%;
+  }
 `;
 
 const HostWrapper = styled.div`
 display: flex;
   align-items: center;
 margin-top: 20px;
+@media screen and (max-width: 767px) {
+  margin:0 70%;
+  gap: 15%;
+}
 `;
 
 const HostName = styled.p`
 color: #ff6060;
 margin-right: 10px;
+@media screen and (max-width: 767px) {
+  margin-right:0;
+}
 `;
 
 const HostImage = styled.img`
 width: 50px;
 height: 50px;
 border-radius: 50%;
+margin-right: 5%;
 `;
 
 const Ratings = styled.div`
 margin-top: 10px;
+@media screen and (max-width: 767px) {
+  margin: 5% 0 0 -10%;
+  order:-1;
+}
 `;
 
 const CollapseContainer = styled.div`
@@ -122,6 +182,13 @@ display: flex;
 flex-wrap: wrap;
 flex-direction: row;
 gap: 10%;
+@media screen and (max-width: 767px) {
+  flex-direction: column;
+  gap:0;
+  width:90%;
+  margin: 0 2% 0 2%;
+  font-size: 1.8em;
+}
 `;
 
 const CollapseItemContainer = styled.div`

@@ -40,6 +40,11 @@ const CollapseContent = styled.div`
   display: flex;
   align-items: center;
   font-size: 0.9em;
+
+  @media screen and (max-width: 767px) {
+    font-size: 0.8em;
+    height: ${({ isOpen }) => (isOpen ? '140px' : '0px')};
+  }
 `;
 
 const CollapseIcon = styled.img`

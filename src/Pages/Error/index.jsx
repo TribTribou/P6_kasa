@@ -11,10 +11,16 @@ const ErrorTitle = styled.h1`
   font-size: 10em;
   margin-bottom: 12%;
   margin-top: -1%;
+  @media screen and (max-width: 767px) {
+    font-size: 5em;
+  }
 `;
 
 const ErrorMessage = styled.p`
   font-size: 2em;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2em;
+  }
 `;
 
 const HomeLink = styled(Link)`

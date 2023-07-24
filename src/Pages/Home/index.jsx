@@ -10,7 +10,12 @@ const HomeBanner = styled.div`
   border-radius: 20px;
   margin-bottom: 5%;
   max-width: 100%;
-  max-height:20%;
+  max-height: 12.5em;
+  @media screen and (max-width: 767px) {
+    overflow:visible;
+    justify-content: center;
+    border-radius:5px;
+  }
 `;
 
 const HomeBannerImage = styled.img`
@@ -18,6 +23,12 @@ const HomeBannerImage = styled.img`
   height: 200px;
   object-fit: cover;
   filter: brightness(0.6);
+  @media screen and (max-width: 767px) {
+    height:8em;
+    width:90%;
+    border-radius: 10px;
+    margin: -5% 0 0 7.5%;
+  }
 `;
 
 const HomeSlogan = styled.div`
@@ -31,6 +42,10 @@ const HomeSlogan = styled.div`
   max-width: 90%;
   text-align: center;
   white-space: nowrap;
+  @media screen and (max-width: 767px) {
+    font-size:1em;
+    padding: 0 0 5% 0;
+  }
 `;
 
 const HomeWrapper = styled.div`
@@ -40,6 +55,12 @@ const HomeWrapper = styled.div`
   background-color: #F6F6F6;
   padding: 20px;
   border-radius: 10px;
+  @media screen and (max-width: 767px) {
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    background-color: white;
+  }
 `;
 
 const ThumbWrapper = styled.div`
@@ -49,7 +70,11 @@ const ThumbWrapper = styled.div`
 `;
 
 function Home() {
-  const thumbsToShow = logements.slice(0, 6); // Limite l'affichage à 6 thumbs maximum
+  let thumbsToShow = logements.slice(0, 6); // Limite l'affichage à 6 thumbs maximum
+
+  if (window.innerWidth <= 767) {
+    thumbsToShow = logements.slice(0, 3); // En mode mobile, affiche seulement 3 thumbs
+  }
 
   return (
     <div>
