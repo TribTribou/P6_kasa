@@ -114,7 +114,7 @@ flex-wrap: wrap;
 gap: 10px;
 margin-top: 10px;
 @media screen and (max-width: 767px) {
-  margin:70% 0 0 2%;
+  margin:275px 0 0 2%;
   position:absolute;
   top:1;
   flex-wrap: nowrap;
@@ -151,7 +151,7 @@ display: flex;
   align-items: center;
 margin-top: 20px;
 @media screen and (max-width: 767px) {
-  margin:0 70%;
+  margin:0;
   gap: 15%;
 }
 `;
@@ -174,7 +174,7 @@ margin-right: 5%;
 const Ratings = styled.div`
 margin-top: 10px;
 @media screen and (max-width: 767px) {
-  margin: 5% 0 0 -10%;
+  margin: 5% 10em 0 0;
   order:-1;
 }
 `;
