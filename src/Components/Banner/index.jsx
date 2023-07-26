@@ -39,7 +39,7 @@ function Banner() {
     <Nav>
         <LogoKasa />
       <TextWrapper>
-      <NavItem to="/P6_kasa" active={location.pathname === '/P6_kasa'}>
+      <NavItem to="/P6_kasa/" active={location.pathname === '/P6_kasa/'}>
         <Accueil />
       </NavItem>
       <NavItem to="/a-propos" active={location.pathname === '/a-propos'}>

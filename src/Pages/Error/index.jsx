@@ -38,7 +38,7 @@ function Error() {
     <ErrorContainer>
       <ErrorTitle>404</ErrorTitle>
       <ErrorMessage>Oups! La page que vous demandez n'existe pas.</ErrorMessage>
-      <HomeLink to="/P6_kasa">Retourner sur la page d'accueil</HomeLink>
+      <HomeLink to="/P6_kasa/">Retourner sur la page d'accueil</HomeLink>
     </ErrorContainer>
   );
 }

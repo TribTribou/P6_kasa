@@ -42,7 +42,7 @@ root.render(
       <GlobalStyle />
       <Banner />
       <Routes>
-        <Route path="/P6_kasa" element={<Home />} />
+        <Route path="/P6_kasa/" element={<Home />} />
         <Route path="/a-propos" element={<Apropos />} />
         <Route path="/logement/:id" element={<DetailsPage />} />
         <Route path="*" element={<Error />} />
