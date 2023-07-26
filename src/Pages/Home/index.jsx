@@ -3,6 +3,7 @@ import Thumb from '../../Components/Thumb';
 import logements from '../../assets/logements.json'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import HomeBannerImg from '../../assets/HomeBannerImg.jpg';
 
 const HomeBanner = styled.div`
   position: relative;
@@ -79,7 +80,7 @@ function Home() {
   return (
     <div>
       <HomeBanner>
-        <HomeBannerImage src="./HomeBannerImg.jpg" alt="Paysage illustratif" />
+        <HomeBannerImage src={HomeBannerImg} alt="Paysage illustratif" />
         <HomeSlogan>Chez vous, partout et ailleurs</HomeSlogan>
       </HomeBanner>
       <HomeWrapper>

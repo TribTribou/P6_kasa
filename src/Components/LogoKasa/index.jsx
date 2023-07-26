@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LogoKasaImg from '../../assets/logoKasaImg.png';
 
 const LogoWrapper = styled.div`
   display: inline-block;
@@ -23,7 +24,7 @@ function LogoKasa() {
     <LogoWrapper>
       <LogoText>
         K
-        <LogoImage src="../logoKasaImg.png" alt="Logo Kasa" />
+        <LogoImage src={LogoKasaImg} alt="Logo Kasa" />
         sa
       </LogoText>
     </LogoWrapper>

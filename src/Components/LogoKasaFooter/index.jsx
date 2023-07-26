@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logoKasaImg2 from '../../assets/logoKasaImg2.png';
 
 const LogoWrapper = styled.div`
   display: inline-block;
@@ -26,7 +27,7 @@ function LogoKasaFooter() {
           <LogoWrapper>
             <LogoText>
               K
-              <LogoImage src="../logoKasaImg2.png" alt="Logo Kasa Footer" />
+              <LogoImage src={logoKasaImg2} alt="Logo Kasa Footer" />
               sa
             </LogoText>
           </LogoWrapper>

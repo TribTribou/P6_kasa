@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import CollapseItem from '../../Components/CollapseItem';
+import AProposImg from '../../assets/AProposImg.jpg';
+
 const ColumnWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +43,7 @@ function Apropos() {
   return (
     <div>
       <AproposBanner>
-        <AproposBannerImage src="./AProposImg.jpg" alt="Autre paysage illustratif" />
+        <AproposBannerImage src={AProposImg} alt="Autre paysage illustratif" />
       </AproposBanner>
       <ColumnWrapper>
         <CollapseItem

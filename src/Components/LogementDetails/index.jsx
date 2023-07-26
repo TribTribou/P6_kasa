@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import RatingStars from '../RatingStars';
 import CollapseItem from '../CollapseItem';
 import CollapseEquipements from '../CollapseEquipements';
+import LeftFlatArrow from '../../assets/Left-flat-arrow.svg';
+import RightFlatArrow from '../../assets/Right-flat-arrow.svg';
 
 const LogementDetailsWrapper = styled.div`
 width:100%;
@@ -210,8 +212,8 @@ function LogementDetails({ logement }) {
     <LogementDetailsWrapper>
       <CarouselWrapper>
         <CarouselImage src={logement.pictures[currentImageIndex]} alt={logement.title} />
-        <CarouselButtonPrev src='../Left-flat-arrow.svg'  onClick={handlePrevClick} />
-        <CarouselButtonNext src='../Right-flat-arrow.svg' onClick={handleNextClick} />
+        <CarouselButtonPrev src={LeftFlatArrow}  onClick={handlePrevClick} />
+        <CarouselButtonNext src={RightFlatArrow} onClick={handleNextClick} />
       </CarouselWrapper>
       <TitleWrapper>
       <TitleLocationWrapper>

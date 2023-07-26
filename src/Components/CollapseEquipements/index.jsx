@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import DownFlatArrow from '../../assets/Down-flat-arrow.svg';
 
 const CollapseWrapper = styled.div`
   border: 1px solid #ccc;
@@ -66,7 +67,7 @@ function CollapseEquipements({ equipments }) {
       <CollapseHeader onClick={toggleCollapse}>
         Équipements
         <CollapseButton isOpen={isOpen}>
-          <CollapseIcon src='../Down-flat-arrow.svg' scale={2.5} alt={isOpen ? '▼' : '▲'} />
+          <CollapseIcon src={DownFlatArrow} scale={2.5} alt={isOpen ? '▼' : '▲'} />
         </CollapseButton>
       </CollapseHeader>
       <CollapseContent isOpen={isOpen} itemCount={itemCount} >
