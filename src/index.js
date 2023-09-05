@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Montserrat';
     width: 90%;
-    margin: 4%;
+    margin: 5%;
     a {
       text-decoration: none;
     }
