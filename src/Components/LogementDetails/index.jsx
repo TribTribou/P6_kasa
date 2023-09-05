@@ -13,7 +13,10 @@ max-width: 1250px;
 padding: 20px;
 border-radius: 20px;
 display: flex;
-  flex-direction: column;
+flex-direction: column;
+margin: 0 auto; /* Centre horizontalement le conteneur */
+text-align: center;
+
   @media screen and (max-width: 767px) {
     padding:0;
     margin: 0 0 0 5%;
