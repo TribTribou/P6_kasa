@@ -10,7 +10,7 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.red};
-  margin-top: -50px;
+  margin-top: -5%;
   @media screen and (max-width: 767px) {
     margin-left:5%;
   }
