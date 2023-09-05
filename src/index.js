@@ -19,17 +19,10 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Montserrat';
+    width: 90%;
+    margin: 4%;
     a {
       text-decoration: none;
-    }
-
-    
-    @media screen and (min-width: 768px) {
-      body {
-        max-width: 1400px;
-        margin: 0 auto; /* Centrer le contenu sur les écrans plus larges */
-        padding: 0 5%; /* Ajouter une marge de 5% sur les côtés pour les écrans plus larges */
-      }
     }
 
     @media screen and (max-width: 767px) {

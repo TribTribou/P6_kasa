@@ -8,7 +8,8 @@ import LeftFlatArrow from '../../assets/Left-flat-arrow.svg';
 import RightFlatArrow from '../../assets/Right-flat-arrow.svg';
 
 const LogementDetailsWrapper = styled.div`
-width:100%;
+margin: 8%;
+width: 80%;
 max-width: 1250px;
 padding: 20px;
 border-radius: 20px;
